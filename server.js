@@ -12,6 +12,11 @@ const MONGO_URI = process.env.MONGO_URI;
 app.use(cors());
 app.use(express.json());
 
+app.get('/', (req, res) => {
+  res.send('Mindpal backend is live!');
+});
+
+
 // MongoDB connection
 mongoose.connect(MONGO_URI)
   .then(() => {
